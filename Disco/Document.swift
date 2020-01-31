@@ -13,14 +13,7 @@ class Document: NSDocument {
 	/// List of disks stored in this document
 	var disks: [DiskModel] = [DiskModel()]
 
-	override init() {
-	    super.init()
-		// Add your subclass-specific initialization here.
-	}
-
-	override class var autosavesInPlace: Bool {
-		return true
-	}
+	override class var autosavesInPlace: Bool { true }
 
 	override func makeWindowControllers() {
 		// Create the SwiftUI view that provides the window contents.
@@ -37,6 +30,7 @@ class Document: NSDocument {
 		self.addWindowController(windowController)
 	}
 
+	/// JSON encode
 	lazy var encoder: some JSONEncoder = {
 		let encoder = JSONEncoder()
 		encoder.outputFormatting = .prettyPrinted
@@ -47,6 +41,7 @@ class Document: NSDocument {
 		return encoder
 	}()
 
+	/// JSON decoder
 	lazy var decoder: some JSONDecoder = {
 		let decoder = JSONDecoder()
 		decoder.dateDecodingStrategy = .iso8601
@@ -54,19 +49,14 @@ class Document: NSDocument {
 	}()
 
 	override func data(ofType typeName: String) throws -> Data {
-		// Insert code here to write your document to data of the specified type, throwing an error in case of failure.
-		// Alternatively, you could remove this method and override fileWrapper(ofType:), write(to:ofType:), or write(to:ofType:for:originalContentsURL:) instead.
 		let data = try encoder.encode(disks)
-		Swift.print(String(data: data, encoding: .utf8)!)
+		Swift.print(String(data: data, encoding: .utf8) ?? "JSON encoding error")
 		return try data.zipped()
 	}
 
 	override func read(from zippedData: Data, ofType typeName: String) throws {
-		// Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
-		// Alternatively, you could remove this method and override read(from:ofType:) instead.
-		// If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
 		let data = try zippedData.unzipped()
-		Swift.print(String(data: data, encoding: .utf8)!)
+		Swift.print(String(data: data, encoding: .utf8) ?? "JSON decoding error")
 		try disks = decoder.decode([DiskModel].self, from: data)
 	}
 }
