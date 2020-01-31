@@ -8,8 +8,7 @@
 
 import Foundation
 
-class DirectoryModel: MediaModel {
-	var scanned: Date?
+class DirectoryModel: FileModel {
 	var directories: [DirectoryModel] = []
 	var files: [FileModel] = []
 }

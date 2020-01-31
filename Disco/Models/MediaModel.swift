@@ -10,7 +10,7 @@ import Foundation
 
 class MediaModel: Codable {
 	var id = UUID()
-	var name = "Untitled"
+	var path: String { "Untitled" }
 	var modified = Date()
 	var created = Date()
 	var label: String?
@@ -18,6 +18,6 @@ class MediaModel: Codable {
 }
 
 extension MediaModel: Comparable {
-	static func < (lhs: MediaModel, rhs: MediaModel) -> Bool { lhs.name < rhs.name }
+	static func < (lhs: MediaModel, rhs: MediaModel) -> Bool { lhs.path < rhs.path }
 	static func == (lhs: MediaModel, rhs: MediaModel) -> Bool { lhs.id == rhs.id }
 }
