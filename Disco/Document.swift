@@ -37,23 +37,33 @@ class Document: NSDocument {
 		self.addWindowController(windowController)
 	}
 
+	lazy var encoder: some JSONEncoder = {
+		let encoder = JSONEncoder()
+		encoder.outputFormatting = .prettyPrinted
+		// sort keys so that diffs are possible?
+		encoder.outputFormatting.formUnion(.sortedKeys)
+		// more readable date format
+		encoder.dateEncodingStrategy = .iso8601
+		return encoder
+	}()
+
+	lazy var decoder: some JSONDecoder = {
+		let decoder = JSONDecoder()
+		decoder.dateDecodingStrategy = .iso8601
+		return decoder
+	}()
+
 	override func data(ofType typeName: String) throws -> Data {
 		// Insert code here to write your document to data of the specified type, throwing an error in case of failure.
 		// Alternatively, you could remove this method and override fileWrapper(ofType:), write(to:ofType:), or write(to:ofType:for:originalContentsURL:) instead.
-		let encoder = JSONEncoder()
-		encoder.outputFormatting = .prettyPrinted
-		encoder.dateEncodingStrategy = .iso8601
 		let data = try encoder.encode(disks)
-		Swift.print(String(data: data, encoding: .utf8)!)
-		return data
+		return try data.zipped()
 	}
 
 	override func read(from data: Data, ofType typeName: String) throws {
 		// Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
 		// Alternatively, you could remove this method and override read(from:ofType:) instead.
 		// If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
-		let decoder = JSONDecoder()
-		decoder.dateDecodingStrategy = .iso8601
-		try disks = decoder.decode([DiskModel].self, from: data)
+		try disks = decoder.decode([DiskModel].self, from: try data.unzipped())
 	}
 }

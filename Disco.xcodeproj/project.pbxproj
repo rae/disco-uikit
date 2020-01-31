@@ -24,6 +24,8 @@
 		01DAC8DB23E4C04000C70433 /* DiskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D923E4C04000C70433 /* DiskModel.swift */; };
 		01DAC8DD23E4C07C00C70433 /* DiskKindsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8DC23E4C07C00C70433 /* DiskKindsModel.swift */; };
 		01DAC8DE23E4C07C00C70433 /* DiskKindsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8DC23E4C07C00C70433 /* DiskKindsModel.swift */; };
+		01DAC8E123E4D13000C70433 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8E023E4D13000C70433 /* Data+Extensions.swift */; };
+		01DAC8E223E4D13000C70433 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8E023E4D13000C70433 /* Data+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,7 @@
 		01DAC8D623E4BFBA00C70433 /* DirectoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryModel.swift; sourceTree = "<group>"; };
 		01DAC8D923E4C04000C70433 /* DiskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskModel.swift; sourceTree = "<group>"; };
 		01DAC8DC23E4C07C00C70433 /* DiskKindsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskKindsModel.swift; sourceTree = "<group>"; };
+		01DAC8E023E4D13000C70433 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 		0109746023E4B9D500E72A1D /* Disco */ = {
 			isa = PBXGroup;
 			children = (
+				01DAC8DF23E4D11E00C70433 /* Extensions */,
 				01DAC8CF23E4BE4800C70433 /* Models */,
 				0109746123E4B9D500E72A1D /* AppDelegate.swift */,
 				0109746323E4B9D500E72A1D /* Document.swift */,
@@ -135,6 +139,14 @@
 				01DAC8D623E4BFBA00C70433 /* DirectoryModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		01DAC8DF23E4D11E00C70433 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01DAC8E023E4D13000C70433 /* Data+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +253,7 @@
 				01DAC8D123E4BE6100C70433 /* MediaModel.swift in Sources */,
 				0109746423E4B9D500E72A1D /* Document.swift in Sources */,
 				01DAC8D423E4BF9300C70433 /* FileModel.swift in Sources */,
+				01DAC8E123E4D13000C70433 /* Data+Extensions.swift in Sources */,
 				01DAC8D723E4BFBA00C70433 /* DirectoryModel.swift in Sources */,
 				01DAC8DD23E4C07C00C70433 /* DiskKindsModel.swift in Sources */,
 				0109746223E4B9D500E72A1D /* AppDelegate.swift in Sources */,
@@ -254,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01DAC8DE23E4C07C00C70433 /* DiskKindsModel.swift in Sources */,
+				01DAC8E223E4D13000C70433 /* Data+Extensions.swift in Sources */,
 				01DAC8D223E4BE6100C70433 /* MediaModel.swift in Sources */,
 				01DAC8D823E4BFBA00C70433 /* DirectoryModel.swift in Sources */,
 				01DAC8D523E4BF9300C70433 /* FileModel.swift in Sources */,
