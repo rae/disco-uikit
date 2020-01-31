@@ -14,6 +14,16 @@
 		0109746B23E4B9DC00E72A1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0109746A23E4B9DC00E72A1D /* Preview Assets.xcassets */; };
 		0109746E23E4B9DC00E72A1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0109746C23E4B9DC00E72A1D /* Main.storyboard */; };
 		0109747A23E4B9DC00E72A1D /* DiscoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0109747923E4B9DC00E72A1D /* DiscoTests.swift */; };
+		01DAC8D123E4BE6100C70433 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D023E4BE6100C70433 /* MediaModel.swift */; };
+		01DAC8D223E4BE6100C70433 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D023E4BE6100C70433 /* MediaModel.swift */; };
+		01DAC8D423E4BF9300C70433 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D323E4BF9300C70433 /* FileModel.swift */; };
+		01DAC8D523E4BF9300C70433 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D323E4BF9300C70433 /* FileModel.swift */; };
+		01DAC8D723E4BFBA00C70433 /* DirectoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D623E4BFBA00C70433 /* DirectoryModel.swift */; };
+		01DAC8D823E4BFBA00C70433 /* DirectoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D623E4BFBA00C70433 /* DirectoryModel.swift */; };
+		01DAC8DA23E4C04000C70433 /* DiskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D923E4C04000C70433 /* DiskModel.swift */; };
+		01DAC8DB23E4C04000C70433 /* DiskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D923E4C04000C70433 /* DiskModel.swift */; };
+		01DAC8DD23E4C07C00C70433 /* DiskKindsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8DC23E4C07C00C70433 /* DiskKindsModel.swift */; };
+		01DAC8DE23E4C07C00C70433 /* DiskKindsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8DC23E4C07C00C70433 /* DiskKindsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +49,11 @@
 		0109747523E4B9DC00E72A1D /* DiscoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0109747923E4B9DC00E72A1D /* DiscoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoTests.swift; sourceTree = "<group>"; };
 		0109747B23E4B9DC00E72A1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01DAC8D023E4BE6100C70433 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
+		01DAC8D323E4BF9300C70433 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
+		01DAC8D623E4BFBA00C70433 /* DirectoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryModel.swift; sourceTree = "<group>"; };
+		01DAC8D923E4C04000C70433 /* DiskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskModel.swift; sourceTree = "<group>"; };
+		01DAC8DC23E4C07C00C70433 /* DiskKindsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskKindsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +95,7 @@
 		0109746023E4B9D500E72A1D /* Disco */ = {
 			isa = PBXGroup;
 			children = (
+				01DAC8CF23E4BE4800C70433 /* Models */,
 				0109746123E4B9D500E72A1D /* AppDelegate.swift */,
 				0109746323E4B9D500E72A1D /* Document.swift */,
 				0109746523E4B9D500E72A1D /* ContentView.swift */,
@@ -107,6 +123,18 @@
 				0109747B23E4B9DC00E72A1D /* Info.plist */,
 			);
 			path = DiscoTests;
+			sourceTree = "<group>";
+		};
+		01DAC8CF23E4BE4800C70433 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01DAC8D023E4BE6100C70433 /* MediaModel.swift */,
+				01DAC8D323E4BF9300C70433 /* FileModel.swift */,
+				01DAC8D923E4C04000C70433 /* DiskModel.swift */,
+				01DAC8DC23E4C07C00C70433 /* DiskKindsModel.swift */,
+				01DAC8D623E4BFBA00C70433 /* DirectoryModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01DAC8D123E4BE6100C70433 /* MediaModel.swift in Sources */,
 				0109746423E4B9D500E72A1D /* Document.swift in Sources */,
+				01DAC8D423E4BF9300C70433 /* FileModel.swift in Sources */,
+				01DAC8D723E4BFBA00C70433 /* DirectoryModel.swift in Sources */,
+				01DAC8DD23E4C07C00C70433 /* DiskKindsModel.swift in Sources */,
 				0109746223E4B9D500E72A1D /* AppDelegate.swift in Sources */,
+				01DAC8DA23E4C04000C70433 /* DiskModel.swift in Sources */,
 				0109746623E4B9D500E72A1D /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +253,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01DAC8DE23E4C07C00C70433 /* DiskKindsModel.swift in Sources */,
+				01DAC8D223E4BE6100C70433 /* MediaModel.swift in Sources */,
+				01DAC8D823E4BFBA00C70433 /* DirectoryModel.swift in Sources */,
+				01DAC8D523E4BF9300C70433 /* FileModel.swift in Sources */,
+				01DAC8DB23E4C04000C70433 /* DiskModel.swift in Sources */,
 				0109747A23E4B9DC00E72A1D /* DiscoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Disco/Preview Content\"";
-				DEVELOPMENT_TEAM = V9RB7YCRD8;
+				DEVELOPMENT_TEAM = B4B222G88M;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Disco/Info.plist;
@@ -390,7 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Disco/Preview Content\"";
-				DEVELOPMENT_TEAM = V9RB7YCRD8;
+				DEVELOPMENT_TEAM = B4B222G88M;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Disco/Info.plist;

@@ -10,6 +10,8 @@ import Cocoa
 import SwiftUI
 
 class Document: NSDocument {
+	/// List of disks stored in this document
+	var disks: [DiskModel] = [DiskModel()]
 
 	override init() {
 	    super.init()
@@ -38,16 +40,20 @@ class Document: NSDocument {
 	override func data(ofType typeName: String) throws -> Data {
 		// Insert code here to write your document to data of the specified type, throwing an error in case of failure.
 		// Alternatively, you could remove this method and override fileWrapper(ofType:), write(to:ofType:), or write(to:ofType:for:originalContentsURL:) instead.
-		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+		let encoder = JSONEncoder()
+		encoder.outputFormatting = .prettyPrinted
+		encoder.dateEncodingStrategy = .iso8601
+		let data = try encoder.encode(disks)
+		Swift.print(String(data: data, encoding: .utf8)!)
+		return data
 	}
 
 	override func read(from data: Data, ofType typeName: String) throws {
 		// Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
 		// Alternatively, you could remove this method and override read(from:ofType:) instead.
 		// If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
-		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+		let decoder = JSONDecoder()
+		decoder.dateDecodingStrategy = .iso8601
+		try disks = decoder.decode([DiskModel].self, from: data)
 	}
-
-
 }
-
