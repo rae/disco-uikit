@@ -17,7 +17,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	@IBAction func importAscii(_sender: Any) {
-		print("import")
+		let panel = NSOpenPanel()
+		panel.begin { response in
+			if response == .OK {
+				panel.urls.forEach { url in
+					print("import \(url.absoluteString)")
+				}
+			}
+		}
 	}
 }
 
