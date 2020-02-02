@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	@IBAction func importAscii(_sender: Any) {
 		let panel = NSOpenPanel()
+		panel.allowedFileTypes = ["txt"]
 		panel.begin { response in
 			if response == .OK {
 				panel.urls.forEach { url in
@@ -27,4 +28,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 }
-
