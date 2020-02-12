@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DiskKindsModel: Codable {
+class DiskKindsModel: Codable, ObservableObject {
 	enum Kind: String, Codable {
 		case writable
 		case network
@@ -34,9 +34,9 @@ class DiskKindsModel: Codable {
 			}
 		}
 	}
-	var capacity: Int?
-	var kindName: String?
-	var isWritable = false
+	@Published var capacity: Int?
+	@Published var kindName: String?
+	@Published var isWritable = false
 
 	static var sizes: [Kind: Int] = [
 		.cd: 700.mb,
@@ -52,7 +52,7 @@ class DiskKindsModel: Codable {
 		.bdrexl: 100.gb
 	]
 
-	var kind: Kind? {
+	@Published var kind: Kind? {
 		didSet {
 			guard let kind = kind else {
 				// setting to `nil` wipes out all data

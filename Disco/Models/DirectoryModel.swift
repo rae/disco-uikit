@@ -9,6 +9,6 @@
 import Foundation
 
 class DirectoryModel: FileModel {
-	var directories: [DirectoryModel] = []
-	var files: [FileModel] = []
+	@Published var directories: [DirectoryModel] = []
+	@Published var files: [FileModel] = []
 }

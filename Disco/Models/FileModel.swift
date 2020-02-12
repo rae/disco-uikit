@@ -9,11 +9,11 @@
 import Foundation
 
 class FileModel : MediaModel {
-	var size = 0
-	var filename = "Untitled"
+	@Published var size = 0
+	@Published var filename = "Untitled"
 
 	let dirSep = "/"
-	var parentDirectory: DirectoryModel?
+	@Published var parentDirectory: DirectoryModel?
 
 	override var path: String {
 		get {

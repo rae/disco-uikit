@@ -28,6 +28,7 @@
 		01DAC8E223E4D13000C70433 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8E023E4D13000C70433 /* Data+Extensions.swift */; };
 		01DAC8E423E4DF6300C70433 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8E323E4DF6300C70433 /* Int+Extensions.swift */; };
 		01DAC8E523E4DF6300C70433 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8E323E4DF6300C70433 /* Int+Extensions.swift */; };
+		01E0BBA123EB6C5E0052C843 /* Published+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0BBA023EB6C5E0052C843 /* Published+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		01DAC8DC23E4C07C00C70433 /* DiskKindsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskKindsModel.swift; sourceTree = "<group>"; };
 		01DAC8E023E4D13000C70433 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		01DAC8E323E4DF6300C70433 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		01E0BBA023EB6C5E0052C843 /* Published+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				01DAC8E023E4D13000C70433 /* Data+Extensions.swift */,
+				01E0BBA023EB6C5E0052C843 /* Published+Extensions.swift */,
 				01DAC8E323E4DF6300C70433 /* Int+Extensions.swift */,
 			);
 			path = Extensions;
@@ -258,6 +261,7 @@
 				0109746423E4B9D500E72A1D /* Document.swift in Sources */,
 				01DAC8D423E4BF9300C70433 /* FileModel.swift in Sources */,
 				01DAC8E123E4D13000C70433 /* Data+Extensions.swift in Sources */,
+				01E0BBA123EB6C5E0052C843 /* Published+Extensions.swift in Sources */,
 				01DAC8D723E4BFBA00C70433 /* DirectoryModel.swift in Sources */,
 				01DAC8DD23E4C07C00C70433 /* DiskKindsModel.swift in Sources */,
 				0109746223E4B9D500E72A1D /* AppDelegate.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 
 class DiskModel: DirectoryModel {
-	var capacity = 0
-	var scanned: Date?
-	var kind = DiskKindsModel(kind: .bddl)
+	@Published var capacity = 0
+	@Published var scanned: Date?
+	@Published var kind = DiskKindsModel(kind: .bddl)
 }

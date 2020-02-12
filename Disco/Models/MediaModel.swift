@@ -8,13 +8,13 @@
 
 import Foundation
 
-class MediaModel: Codable {
-	var id = UUID()
+class MediaModel: Codable, ObservableObject {
+	@Published var id = UUID()
 	var path: String { "Untitled" }
-	var modified = Date()
-	var created = Date()
-	var label: String?
-	var note: String?
+	@Published var modified = Date()
+	@Published var created = Date()
+	@Published var label: String?
+	@Published var note: String?
 }
 
 extension MediaModel: Comparable {
