@@ -10,11 +10,18 @@ import SwiftUI
 
 struct ContentView: View, DropDelegate {
 	@State var document: Document
-	var name: String { document.disks.map { $0.filename }.joined(separator: ", ") }
     var body: some View {
-		Group {
-			Text("Hello, World! - \(name)")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+		List {
+			ForEach(document.disks) { disk in
+				Section(header: Text(disk.filename)) {
+					ForEach(disk.directories) { dir in
+						Text(dir.filename)
+					}
+					ForEach(disk.files) { file in
+						Text(" - \(file.filename)")
+					}
+				}
+			}
 		}.onDrop(of: [""], delegate: self)
     }
 

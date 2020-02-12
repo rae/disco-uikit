@@ -8,7 +8,8 @@
 
 import Foundation
 
-class MediaModel: Codable, ObservableObject {
+class MediaModel: Codable, ObservableObject, Identifiable {
+	typealias ID = UUID
 	@Published var id = UUID()
 	var path: String { "Untitled" }
 	@Published var modified = Date()
