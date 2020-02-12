@@ -12,4 +12,9 @@ class DiskModel: DirectoryModel {
 	@Published var capacity = 0
 	@Published var scanned: Date?
 	@Published var kind = DiskKindsModel(kind: .bddl)
+
+	convenience init(_ name: String) {
+		self.init()
+		filename = name
+	}
 }

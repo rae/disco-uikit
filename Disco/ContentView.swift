@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct ContentView: View, DropDelegate {
+	@State var document: Document
+	var name: String { document.disks.map { $0.filename }.joined(separator: ", ") }
     var body: some View {
 		Group {
-        Text("Hello, World!")
+			Text("Hello, World! - \(name)")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 		}.onDrop(of: [""], delegate: self)
     }
@@ -38,7 +40,20 @@ struct ContentView: View, DropDelegate {
 }
 
 struct ContentView_Previews: PreviewProvider {
+	static var disks: [DiskModel] = {
+		return [
+			DiskModel("Fred"),
+			DiskModel("Wilma"),
+			DiskModel("Pebbles"),
+			DiskModel("Dino")
+		]
+	}()
+	static var document: Document = {
+		var doc = Document()
+		doc.disks = disks
+		return doc
+	}()
     static var previews: some View {
-        ContentView()
+		ContentView(document: document)
     }
 }

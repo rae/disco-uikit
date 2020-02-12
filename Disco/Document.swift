@@ -17,7 +17,7 @@ class Document: NSDocument {
 
 	override func makeWindowControllers() {
 		// Create the SwiftUI view that provides the window contents.
-		let contentView = ContentView()
+		let contentView = ContentView(document: self)
 
 		// Create the window and set the content view.
 		let window = NSWindow(
