@@ -13,8 +13,10 @@ class DiskModel: DirectoryModel {
 	@Published var scanned: Date?
 	@Published var kind = DiskKindsModel(kind: .bddl)
 
-	convenience init(_ name: String) {
+	convenience init(_ name: String, dirs dirList: [DirectoryModel] = [], files fileList: [FileModel] = []) {
 		self.init()
 		filename = name
+		directories = dirList
+		files = fileList
 	}
 }

@@ -13,9 +13,9 @@ struct ContentView: View, DropDelegate {
     var body: some View {
 		List {
 			ForEach(document.disks) { disk in
-				Section(header: Text(disk.filename)) {
+				Section(header: Text(disk.filename).fontWeight(.bold)) {
 					ForEach(disk.directories) { dir in
-						Text(dir.filename)
+						Text(dir.filename).fontWeight(.bold)
 					}
 					ForEach(disk.files) { file in
 						Text(" - \(file.filename)")
@@ -49,7 +49,14 @@ struct ContentView: View, DropDelegate {
 struct ContentView_Previews: PreviewProvider {
 	static var disks: [DiskModel] = {
 		return [
-			DiskModel("Fred"),
+			DiskModel(
+				"Fred",
+				dirs: [DirectoryModel(
+					"foo",
+					files: [FileModel("barfile")]
+					)],
+				files: [FileModel("aaa")]
+			),
 			DiskModel("Wilma"),
 			DiskModel("Pebbles"),
 			DiskModel("Dino")

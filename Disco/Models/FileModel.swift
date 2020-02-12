@@ -29,6 +29,11 @@ class FileModel : MediaModel {
 			return pathString + filename
 		}
 	}
+	convenience init(_ name: String = "Untitled", parent dir: DirectoryModel? = nil) {
+		self.init()
+		filename = name
+		parentDirectory = dir
+	}
 }
 
 extension FileModel {
