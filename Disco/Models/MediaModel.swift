@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class MediaModel: Codable, ObservableObject, Identifiable {
 	typealias ID = UUID
@@ -16,6 +17,10 @@ class MediaModel: Codable, ObservableObject, Identifiable {
 	@Published var created = Date()
 	@Published var label: String?
 	@Published var note: String?
+
+	public func makeView() -> some View {
+		Text("???")
+	}
 }
 
 extension MediaModel: Comparable {

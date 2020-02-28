@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class FileModel : MediaModel {
 	@Published var size = 0
@@ -34,6 +35,8 @@ class FileModel : MediaModel {
 		filename = name
 		parentDirectory = dir
 	}
+
+	public func makeView() -> some View { FileView(file: self) }
 }
 
 extension FileModel {
