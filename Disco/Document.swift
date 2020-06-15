@@ -10,8 +10,16 @@ import Cocoa
 import SwiftUI
 
 class Document: NSDocument {
+    enum Format: String, Codable {
+        // clear JSON text
+        case json
+        // compressed JSON text
+        case disco
+    }
 	/// List of disks stored in this document
 	var disks: [DiskModel] = [DiskModel()]
+
+    var format: Format = .json
 
 	override class var autosavesInPlace: Bool { true }
 
@@ -49,13 +57,32 @@ class Document: NSDocument {
 	}()
 
 	override func data(ofType typeName: String) throws -> Data {
+        guard let format = Format(rawValue: typeName)
+        else {
+            fatalError("Unknown file format \(typeName)")
+        }
 		let data = try encoder.encode(disks)
 		Swift.print(String(data: data, encoding: .utf8) ?? "JSON encoding error")
-		return try data.zipped()
+        switch format {
+        case .disco:
+            return try data.zipped()
+        case .json:
+            return data
+        }
 	}
 
-	override func read(from zippedData: Data, ofType typeName: String) throws {
-		let data = try zippedData.unzipped()
+	override func read(from rawData: Data, ofType typeName: String) throws {
+        guard let format = Format(rawValue: typeName)
+            else {
+                fatalError("Unknown file format \(typeName)")
+        }
+        let data: Data
+        switch format {
+        case .disco:
+            data = try rawData.unzipped()
+        case .json:
+            data = rawData
+        }
 		Swift.print(String(data: data, encoding: .utf8) ?? "JSON decoding error")
 		try disks = decoder.decode([DiskModel].self, from: data)
 	}
