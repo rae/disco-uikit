@@ -16,6 +16,10 @@ class Document: NSDocument {
         // compressed JSON text
         case disco
     }
+
+	enum FileError: Error {
+		case invalidInput
+	}
 	/// List of disks stored in this document
 	var disks: [DiskModel] = [DiskModel()]
 
@@ -58,9 +62,7 @@ class Document: NSDocument {
 
 	override func data(ofType typeName: String) throws -> Data {
         guard let format = Format(rawValue: typeName)
-        else {
-            fatalError("Unknown file format \(typeName)")
-        }
+		else { throw FileError.invalidInput }
 		let data = try encoder.encode(disks)
 		Swift.print(String(data: data, encoding: .utf8) ?? "JSON encoding error")
         switch format {
@@ -73,9 +75,7 @@ class Document: NSDocument {
 
 	override func read(from rawData: Data, ofType typeName: String) throws {
         guard let format = Format(rawValue: typeName)
-            else {
-                fatalError("Unknown file format \(typeName)")
-        }
+		else { throw FileError.invalidInput }
         let data: Data
         switch format {
         case .disco:

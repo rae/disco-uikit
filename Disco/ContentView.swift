@@ -44,6 +44,12 @@ struct ContentView: View, DropDelegate {
 
 		return true
 	}
+
+	func add(_ fileUrl: URL) {
+		// remember to dispatch on main in case of a @State change
+		self.document.disks.append(DiskModel(fileUrl.lastPathComponent))
+		print("added \"\(fileUrl.lastPathComponent)\"")
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {

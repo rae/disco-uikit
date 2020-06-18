@@ -24,6 +24,7 @@ class DiskKindsModel: Codable, ObservableObject {
 		case bddl
 		case bdxl
 		case bdrexl
+		case unknown
 
 		var isWritable: Bool {
 			switch self {
@@ -49,7 +50,8 @@ class DiskKindsModel: Codable, ObservableObject {
 		.bdre: 25.gb,
 		.bddl: 50.gb,
 		.bdxl: 100.gb,
-		.bdrexl: 100.gb
+		.bdrexl: 100.gb,
+		.unknown: Int.max
 	]
 
 	@Published var kind: Kind? {

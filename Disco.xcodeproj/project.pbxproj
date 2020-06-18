@@ -14,6 +14,7 @@
 		0109746B23E4B9DC00E72A1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0109746A23E4B9DC00E72A1D /* Preview Assets.xcassets */; };
 		0109746E23E4B9DC00E72A1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0109746C23E4B9DC00E72A1D /* Main.storyboard */; };
 		0109747A23E4B9DC00E72A1D /* DiscoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0109747923E4B9DC00E72A1D /* DiscoTests.swift */; };
+		011A3F02249C290800A018B2 /* CatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011A3F01249C290800A018B2 /* CatalogModel.swift */; };
 		01B5B2B923F4C090002CBD0A /* FileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B5B2B823F4C090002CBD0A /* FileView.swift */; };
 		01B5B2BB23F4C142002CBD0A /* DirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B5B2BA23F4C142002CBD0A /* DirectoryView.swift */; };
 		01DAC8D123E4BE6100C70433 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAC8D023E4BE6100C70433 /* MediaModel.swift */; };
@@ -56,6 +57,19 @@
 		0109747523E4B9DC00E72A1D /* DiscoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0109747923E4B9DC00E72A1D /* DiscoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoTests.swift; sourceTree = "<group>"; };
 		0109747B23E4B9DC00E72A1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		011A3F01249C290800A018B2 /* CatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogModel.swift; sourceTree = "<group>"; };
+		0145782A2471E7D300252692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0145782C2471E7D300252692 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
+		0145782E2471E7D300252692 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		014578302471E7D300252692 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		014578332471E7D300252692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		014578352471E7D700252692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		014578382471E7D700252692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0145783A2471E7D700252692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		014578432471E7D700252692 /* Disco_uikitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disco_uikitTests.swift; sourceTree = "<group>"; };
+		014578452471E7D700252692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0145784E2471E7D700252692 /* Disco_uikitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disco_uikitUITests.swift; sourceTree = "<group>"; };
+		014578502471E7D700252692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01B5B2B823F4C090002CBD0A /* FileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileView.swift; sourceTree = "<group>"; };
 		01B5B2BA23F4C142002CBD0A /* DirectoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryView.swift; sourceTree = "<group>"; };
 		01DAC8D023E4BE6100C70433 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
@@ -91,6 +105,9 @@
 			children = (
 				0109746023E4B9D500E72A1D /* Disco */,
 				0109747823E4B9DC00E72A1D /* DiscoTests */,
+				014578292471E7D300252692 /* Disco-uikit */,
+				014578422471E7D700252692 /* Disco-uikitTests */,
+				0145784D2471E7D700252692 /* Disco-uikitUITests */,
 				0109745F23E4B9D500E72A1D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,6 +156,39 @@
 			path = DiscoTests;
 			sourceTree = "<group>";
 		};
+		014578292471E7D300252692 /* Disco-uikit */ = {
+			isa = PBXGroup;
+			children = (
+				0145782A2471E7D300252692 /* AppDelegate.swift */,
+				0145782C2471E7D300252692 /* DocumentBrowserViewController.swift */,
+				0145782E2471E7D300252692 /* DocumentViewController.swift */,
+				014578302471E7D300252692 /* Document.swift */,
+				014578322471E7D300252692 /* Main.storyboard */,
+				014578352471E7D700252692 /* Assets.xcassets */,
+				014578372471E7D700252692 /* LaunchScreen.storyboard */,
+				0145783A2471E7D700252692 /* Info.plist */,
+			);
+			path = "Disco-uikit";
+			sourceTree = "<group>";
+		};
+		014578422471E7D700252692 /* Disco-uikitTests */ = {
+			isa = PBXGroup;
+			children = (
+				014578432471E7D700252692 /* Disco_uikitTests.swift */,
+				014578452471E7D700252692 /* Info.plist */,
+			);
+			path = "Disco-uikitTests";
+			sourceTree = "<group>";
+		};
+		0145784D2471E7D700252692 /* Disco-uikitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0145784E2471E7D700252692 /* Disco_uikitUITests.swift */,
+				014578502471E7D700252692 /* Info.plist */,
+			);
+			path = "Disco-uikitUITests";
+			sourceTree = "<group>";
+		};
 		01B5B2B723F4C05F002CBD0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				01DAC8D023E4BE6100C70433 /* MediaModel.swift */,
+				011A3F01249C290800A018B2 /* CatalogModel.swift */,
 				01DAC8D323E4BF9300C70433 /* FileModel.swift */,
 				01DAC8D623E4BFBA00C70433 /* DirectoryModel.swift */,
 				01DAC8DC23E4C07C00C70433 /* DiskKindsModel.swift */,
@@ -214,7 +265,7 @@
 		0109745623E4B9D500E72A1D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Tnir Technologies";
 				TargetAttributes = {
@@ -282,6 +333,7 @@
 				0109746223E4B9D500E72A1D /* AppDelegate.swift in Sources */,
 				01DAC8DA23E4C04000C70433 /* DiskModel.swift in Sources */,
 				0109746623E4B9D500E72A1D /* ContentView.swift in Sources */,
+				011A3F02249C290800A018B2 /* CatalogModel.swift in Sources */,
 				01B5B2BB23F4C142002CBD0A /* DirectoryView.swift in Sources */,
 				01DAC8E423E4DF6300C70433 /* Int+Extensions.swift in Sources */,
 			);
@@ -319,6 +371,22 @@
 				0109746D23E4B9DC00E72A1D /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		014578322471E7D300252692 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				014578332471E7D300252692 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		014578372471E7D700252692 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				014578382471E7D700252692 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
